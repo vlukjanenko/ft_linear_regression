@@ -17,6 +17,7 @@ class DataSet {
 	public double theta0 = 0.0;
 	public double theta1 = 0.0;
 	public int iterations = 0;
+	public int precision = 0;
 
 	public DataSet(String fileName[]) {
 		readCsv(fileName);
@@ -172,8 +173,8 @@ class Train {
 			summ2 = learningRate * (summ2 / dataSet.trainData.size());
 			dataSet.theta0 -= summ1;
 			dataSet.theta1 -= summ2;
+			dataSet.precision = 100 - calculateError(dataSet);
 		}
-		System.out.printf("Average precision = %d%%\n", 100 - calculateError(dataSet));
 		dataSet.writeTheta();
 	}
 }

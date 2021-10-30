@@ -22,6 +22,7 @@ public class PlotExample extends JPanel{
 		graph.drawString("Price (1000$)", 5 ,15);
 		graph.drawString("Milage (1000km)",  width - marg * 6, height - marg - 7);
 		graph.drawString(String.format("Iterations: %d", trainSet.iterations), 400, 20);
+		graph.drawString(String.format("Average precision: %d%%", trainSet.precision), 600, 20);
 		graph.draw(new Line2D.Double(marg, marg, marg + 3, marg + 10));
 		graph.draw(new Line2D.Double(marg, marg, marg - 3, marg + 10));
 		graph.draw(new Line2D.Double(width - marg, height - marg, width - marg - 10, height - marg - 3));
